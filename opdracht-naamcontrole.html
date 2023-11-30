@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let voornaam;
+        let achternaam;
+
+        function controle(naam) {
+            if (naam == null) {
+                document.write("U heeft geannuleerd!");
+                return false;
+            } else if (naam == "") {
+                document.write("U heeft niets ingegeven!");
+                return false;
+            } else if (naam.length < 2) {
+                document.write("U heeft Minder dan 2 karakters ingevoerd!");
+                return false;
+            } else {
+                return naam.charAt(0).toUpperCase() + naam.substring(1) ;
+            }
+        }
+
+        function vraagnaam() {
+            voornaam = prompt("geef je voornaam:");
+            let gecontroleerde_voornaam = controle(voornaam);
+
+            if (gecontroleerde_voornaam !== false) {
+                achternaam = prompt("geef je achternaam:");
+                let gecontroleerde_achternaam = controle(achternaam);
+
+                if (gecontroleerde_achternaam !== false) {
+                    document.write(`<p>Hey ${gecontroleerde_voornaam} ${gecontroleerde_achternaam}!</p>`);
+                }
+            }
+        }
+        vraagnaam();
+    </script>
+</body>
+</html>

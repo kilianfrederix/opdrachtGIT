@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let getallen = [];
+
+        const controleAantal = (aantal) => {
+            if (aantal === null) {
+                document.write("U hebt geannuleerd");
+                return 0;
+            } else if (aantal === "") {
+                document.write("U heeft niets ingegeven");
+                return 0;
+            } else if (aantal) {
+                return aantal;
+            } else {
+                document.write("Dit is geen correcte ingave.");
+                return 0;
+            }
+        }
+
+        const controleGetal = (waarde) => {
+            if (waarde === null || waarde === "" || isNaN(waarde)) {
+                return "fout";
+            } else {
+                return waarde;
+            }
+        }
+
+        let aantal = prompt("Hoeveel getallen wil je ingeven?");
+        aantal = controleAantal(aantal);
+
+        if (aantal > 0) {
+            for (let i = 1; i <= aantal; i++) {
+                let input = prompt(`Geef getal ${i} in:`);
+                getallen.push(controleGetal(input));
+            }
+
+            document.write(`<p>Ingevoerde getallen: ${getallen}</p>`);
+        } else {
+            document.write("Geen geldig aantal ingevoerd.");
+        }
+    </script>
+</body>
+
+</html>

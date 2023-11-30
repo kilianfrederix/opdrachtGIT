@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Getallen = [13, 23, 12, 45, 22, 48, 66, 100] 
+        for (i = 0; i < Getallen.length; i++) {
+            const even = Getallen[i]
+            if (even % 2 === 0) {
+                document.write(` ${even} `)
+            }
+        }
+
+        
+        let zin = "Tel het aantal keer dat elke letter voorkomt in deze tekst";
+        let tellerArray = new Array(26).fill(0);
+        for (i = 0; i < zin.length; i++) {
+            let karakter = zin[i].toLowerCase();
+            if (karakter >= 'a' && karakter <= 'z') {
+                tellerArray[karakter.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+            }
+        }
+        for (i = 0; i < tellerArray.length; i++) {
+        let letter = String.fromCharCode('a'.charCodeAt(0) + i);
+        document.write(`<p>letter ${letter} komt ${tellerArray[i]} keer voor.</p>`)
+        }
+    </script>
+</body>
+</html>
